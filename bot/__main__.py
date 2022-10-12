@@ -70,13 +70,13 @@ def getHerokuDetails(h_api_key, h_app_name):
         quota_remain = account_quota - quota_used
         if EMOJI_THEME is True:
             abc += f'<b></b>\n'
-            abc += f'<b>╭─《🌐 HEROKU STATS 🌐》</b>\n'
+            abc += f'<b>┌《🌐 HEROKU STATS 🌐》</b>\n'
             abc += f"<b>├ 💪🏻 FULL</b>: {get_readable_time(account_quota)}\n"
             abc += f"<b>├ 👎🏻 USED</b>: {get_readable_time(quota_used)}\n"
             abc += f"<b>├ 👍🏻 FREE</b>: {get_readable_time(quota_remain)}\n"
         else:
             abc += f'<b></b>\n'
-            abc += f'<b>╭─《 HEROKU STATS 》</b>\n'
+            abc += f'<b>┌《 HEROKU STATS 》</b>\n'
             abc += f"<b>├ FULL</b>: {get_readable_time(account_quota)}\n"
             abc += f"<b>├ USED</b>: {get_readable_time(quota_used)}\n"
             abc += f"<b>├ FREE</b>: {get_readable_time(quota_remain)}\n"
@@ -102,11 +102,11 @@ def getHerokuDetails(h_api_key, h_app_name):
         if EMOJI_THEME is True:
             abc += f"<b>├ 🎃 APP USAGE:</b> {get_readable_time(AppQuotaUsed)}\n"
             abc += f"<b>├ 🗑️ OTHER APP:</b> {get_readable_time(OtherAppsUsage)}\n"
-            abc += f'<b>╰─《 ☣️ {CREDIT_NAME} ☣️ 》</b>'
+            abc += f'<b>└《 ☣️ {CREDIT_NAME} ☣️ 》</b>'
         else:
             abc += f"<b>├ APP USAGE:</b> {get_readable_time(AppQuotaUsed)}\n"
             abc += f"<b>├ OTHER APP:</b> {get_readable_time(OtherAppsUsage)}\n"
-            abc += f'<b>╰─《 {CREDIT_NAME} 》</b>'
+            abc += f'<b>└《 {CREDIT_NAME} 》</b>'
         return abc
     except Exception as g:
         LOGGER.error(g)
@@ -161,7 +161,7 @@ def stats(update, context):
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
     if EMOJI_THEME is True:
-            stats = f'<b>╭─《🌐 BOT STATISTICS 🌐》</b>\n' \
+            stats = f'<b>┌《🌐 BOT STATISTICS 🌐》</b>\n' \
                     f'<b>├ 🛠 Updated On: </b>{last_commit}\n'\
                     f'<b>├ ⌛ Uptime: </b>{currentTime}\n'\
                     f'<b>├ 🟢 OS Uptime: </b>{osUptime}\n'\
@@ -170,10 +170,10 @@ def stats(update, context):
                     f'<b>├ 💾 Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
                     f'<b>├ 💿 Disk Free:</b> {free}\n'\
                     f'<b>├ 🔺 Upload Data:</b> {sent}\n'\
-                    f'<b>╰ 🔻 Download Data:</b> {recv}\n\n'
+                    f'<b>└ 🔻 Download Data:</b> {recv}\n\n'
 
     else:
-            stats = f'<b>╭─《 BOT STATISTICS 》</b>\n' \
+            stats = f'<b>┌《 BOT STATISTICS 》</b>\n' \
                     f'<b>├  Updated On: </b>{last_commit}\n'\
                     f'<b>├  Uptime: </b>{currentTime}\n'\
                     f'<b>├  OS Uptime: </b>{osUptime}\n'\
@@ -182,7 +182,7 @@ def stats(update, context):
                     f'<b>├  Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
                     f'<b>├  Disk Free:</b> {free}\n'\
                     f'<b>├  Upload Data:</b> {sent}\n'\
-                    f'<b>╰  Download Data:</b> {recv}\n\n'
+                    f'<b>└  Download Data:</b> {recv}\n\n'
 
 
 
@@ -196,23 +196,23 @@ def stats(update, context):
         user_task = 'No Limit Set' if USER_TASKS_LIMIT is None else f'{USER_TASKS_LIMIT} Tasks/user'
 
         if EMOJI_THEME is True: 
-            stats += f'<b>╭─《 ⚠️ BOT LIMITS ⚠️ 》</b>\n'\
+            stats += f'<b>┌《 ⚠️ BOT LIMITS ⚠️ 》</b>\n'\
                      f'<b>├ 🧲 Torrent/Direct: </b>{torrent_direct}\n'\
                      f'<b>├ 🔐 Zip/Unzip: </b>{zip_unzip}\n'\
                      f'<b>├ 🔷 Leech: </b>{leech_limit}\n'\
                      f'<b>├ ♻️ Clone: </b>{clone_limit}\n'\
                      f'<b>├ 🔰 Mega: </b>{mega_limit}\n'\
                      f'<b>├ 💣 Total Tasks: </b>{total_task}\n'\
-                     f'<b>╰ 🔫 User Tasks: </b>{user_task}\n\n'
+                     f'<b>└ 🔫 User Tasks: </b>{user_task}\n\n'
         else: 
-            stats += f'<b>╭─《  BOT LIMITS  》</b>\n'\
+            stats += f'<b>┌《  BOT LIMITS  》</b>\n'\
                      f'<b>├  Torrent/Direct: </b>{torrent_direct}\n'\
                      f'<b>├  Zip/Unzip: </b>{zip_unzip}\n'\
                      f'<b>├  Leech: </b>{leech_limit}\n'\
                      f'<b>├  Clone: </b>{clone_limit}\n'\
                      f'<b>├  Mega: </b>{mega_limit}\n'\
                      f'<b>├  Total Tasks: </b>{total_task}\n'\
-                     f'<b>╰  User Tasks: </b>{user_task}\n\n'
+                     f'<b>└  User Tasks: </b>{user_task}\n\n'
 
                 
 
