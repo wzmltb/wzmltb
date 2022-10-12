@@ -564,38 +564,38 @@ try:
     MIRROR_ENABLED = getConfig("MIRROR_ENABLED")
     MIRROR_ENABLED = MIRROR_ENABLED.lower() == "true"
 except:
-    MIRROR_ENABLED = False
+    MIRROR_ENABLED = True
 try:
     LEECH_ENABLED = getConfig("LEECH_ENABLED")
     LEECH_ENABLED = LEECH_ENABLED.lower() == "true"
 except:
-    LEECH_ENABLED = False
+    LEECH_ENABLED = True
 
 try:
     WATCH_ENABLED = getConfig("WATCH_ENABLED")
     WATCH_ENABLED = WATCH_ENABLED.lower() == "true"
 except:
-    WATCH_ENABLED = False
+    WATCH_ENABLED = True
 try:
     CLONE_ENABLED = getConfig("CLONE_ENABLED")
     CLONE_ENABLED = CLONE_ENABLED.lower() == "true"
 except:
-    CLONE_ENABLED = False
+    CLONE_ENABLED = True
 try:
     ANILIST_ENABLED = getConfig("ANILIST_ENABLED")
     ANILIST_ENABLED = ANILIST_ENABLED.lower() == "true"
 except:
-    ANILIST_ENABLED = False
+    ANILIST_ENABLED = True
 try:
     WAYBACK_ENABLED = getConfig("WAYBACK_ENABLED")
     WAYBACK_ENABLED = WAYBACK_ENABLED.lower() == "true"
 except:
-    WAYBACK_ENABLED = False
+    WAYBACK_ENABLED = True
 try:
     MEDIAINFO_ENABLED = getConfig("MEDIAINFO_ENABLED")
     MEDIAINFO_ENABLED = MEDIAINFO_ENABLED.lower() == "true"
 except:
-    MEDIAINFO_ENABLED = False
+    MEDIAINFO_ENABLED = True
 try:
     TIMEZONE = getConfig("TIMEZONE")
     if len(TIMEZONE) == 0:
